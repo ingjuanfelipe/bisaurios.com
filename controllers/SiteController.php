@@ -61,7 +61,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new ContactForm();
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+            Yii::$app->session->setFlash('success','Sus datos han sido enviados correctamente. Pronto nos contactaremos con usted.');
+            return $this->render(['/']);
+        }
+        return $this->render('index', [
+            'model' => $model,
+        ]);
     }
 
     /**
