@@ -134,7 +134,7 @@ $this->title = 'Bisaurios.com';
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form_group">
-									<?= $form->field($model, 'empresa') ?>
+									<?= $form->field($model, 'empresa'); //form_control ?>
 								</div>
 							</div>
 							<div class="col-lg-6">

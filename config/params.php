@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'adminEmail' => 'servicio@bisaurios.com',
+    'adminEmail' => 'gerente.sistemas@bisaurios.com',
     'senderEmail' => 'servicio@bisaurios.com',
     'senderName' => 'www.bisaurios.com',
 ];
