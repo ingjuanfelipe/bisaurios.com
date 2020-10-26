@@ -1,5 +1,13 @@
 <?php
+
 /* @var $this yii\web\View */
+/* @var $form yii\bootstrap\ActiveForm */
+/* @var $model \frontend\models\ContactForm */
+
+use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+use yii\captcha\Captcha;
+
 $this->title = 'Bisaurios.com';
 ?>
 
@@ -122,31 +130,31 @@ $this->title = 'Bisaurios.com';
 					<p>Envíenos sus datos para contactarlo, conocer su proyecto y ponerlo en marcha.</p>
 				</div>
 				<div class="contact_form">
-					<form>
+					<?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form_group">
-									<input type="text" class="form_control" placeholder="Nombres" name="name" required>
+									<?= $form->field($model, 'empresa') ?>
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form_group">
-									<input type="text" class="form_control" placeholder="Apellidos" name="name" required>
+									<?= $form->field($model, 'name') ?>
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form_group">
-									<input type="email" class="form_control" placeholder="Email" name="email" required>
+									<?= $form->field($model, 'email') ?>
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form_group">
-									<input type="text" class="form_control" placeholder="Celular" name="phone" required>
+									<?= $form->field($model, 'celular') ?>
 								</div>
 							</div>
 							<div class="col-lg-12">
 								<div class="form_group">
-									<textarea class="form_control" placeholder="Mensaje" name="message"></textarea>
+									<?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 								</div>
 							</div>
 							<div class="col-lg-12">
@@ -155,7 +163,7 @@ $this->title = 'Bisaurios.com';
 								</div>
 							</div>
 						</div>
-					</form>
+					<?php ActiveForm::end(); ?>
 				</div>
 			</div>
 		</div>
