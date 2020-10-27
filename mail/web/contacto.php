@@ -15,23 +15,23 @@ use yii\helpers\Html;
 		<table class="table" border="1" cellpadding="0" cellspacing="0" width="100%">
 			<tr>
 				<td><b>Empresa</b></td>
-				<td><?= $model->empresa; ?></td>
+				<td><?= $model['empresa']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Nombre</b></td>
-				<td><?= $model->nombre; ?></td>
+				<td><?= $model['name']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Email</b></td>
-				<td><?= $model->email; ?></td>
+				<td><?= $model['email']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Celular</b></td>
-				<td><?= $model->celular; ?></td>
+				<td><?= $model['celular']; ?></td>
 			</tr>
 			<tr>
 				<td><b>Mensaje</b></td>
-				<td><?= $model->body; ?></td>
+				<td><?= $model['body']; ?></td>
 			</tr>
 		</table>
 	</p>
