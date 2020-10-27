@@ -31,7 +31,7 @@ class ContactForm extends Model
 			// email has to be a valid email address
 			['email', 'email'],
 			// verifyCode needs to be entered correctly
-			['verifyCode', 'captcha'],
+			//['verifyCode', 'captcha'],
 		];
 	}
 
@@ -63,6 +63,7 @@ class ContactForm extends Model
 			$contacto->name = $this->name;
 			$contacto->email = $this->email;
 			$contacto->celular = $this->celular;
+			$contacto->body = $this->body;
 			if ($contacto->save()) {
 				Yii::$app->mailer->compose()
 					->setTo($email)
@@ -74,7 +75,8 @@ class ContactForm extends Model
 				return true;
 			}else
 				Yii::$app->session->setFlash('error', 'No se pudo enviar su mensaje');
-		}
+		}else
+			Yii::$app->session->setFlash('error', 'Corrija los errores.');
 		return false;
 	}
 }

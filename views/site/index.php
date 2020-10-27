@@ -94,7 +94,7 @@ $this->title = 'Bisaurios.com';
 <!-- Start deneb_testimonial section -->
 
 <!-- Start deneb_cta section -->
-<section class="deneb_cta" style="padding-bottom: 90px;">
+<section class="deneb_cta" style="padding-bottom: 50px;height: 300px;">
 	<div class="container">
 		<div class="cta_wrapper">
 			<div class="row align-items-center">
@@ -106,7 +106,7 @@ $this->title = 'Bisaurios.com';
 				</div>
 				<div class="col-lg-5">
 					<div class="button_box">
-						<a href="#" class="deneb_btn">Contáctenos</a>
+						<a href="/site/contacto" class="deneb_btn">Contáctenos</a>
 					</div>
 				</div>
 			</div>
@@ -114,59 +114,3 @@ $this->title = 'Bisaurios.com';
 	</div>
 </section>
 <!-- End deneb_cta section -->
-
-<!-- Start deneb_contact section -->
-<section class="deneb_contact contact_v1" style="margin-top: 125px;padding-bottom: 90px;">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg-6">
-				<div class="deneb_img_box">
-					<img src="<?= Yii::getAlias('@web'); ?>/deneb/assets/images/contacto/contacto.jpg" class="img-fluid" alt="">
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div class="section_title">
-					<h2>Contáctenos</h2>
-					<p>Envíenos sus datos para contactarlo, conocer su proyecto y ponerlo en marcha.</p>
-				</div>
-				<div class="contact_form">
-					<?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form_group">
-									<?= $form->field($model, 'empresa'); //form_control ?>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="form_group">
-									<?= $form->field($model, 'name') ?>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="form_group">
-									<?= $form->field($model, 'email') ?>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="form_group">
-									<?= $form->field($model, 'celular') ?>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div class="form_group">
-									<?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div class="button_box">
-									<button class="deneb_btn">Enviar</button>
-								</div>
-							</div>
-						</div>
-					<?php ActiveForm::end(); ?>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- End deneb_contact section -->

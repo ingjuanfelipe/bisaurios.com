@@ -58,7 +58,15 @@ AppAsset::register($this);
 	
 	<?php echo $this->render('_header'); ?>
 
-	<?= Alert::widget() ?>
+	<section class="deneb_contact" style="margin-top: 99px;padding-top: 40px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<?= Alert::widget() ?>
+				</div>
+			</div>
+		</div>
+	</section>	
 	<?= $content ?>
 
 	<?php echo $this->render('_footer'); ?>
