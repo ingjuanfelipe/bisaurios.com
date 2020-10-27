@@ -65,12 +65,11 @@ class ContactForm extends Model
 			$contacto->celular = $this->celular;
 			$contacto->body = $this->body;
 			if ($contacto->save()) {
-				Yii::$app->mailer->compose()
+				$mailer->compose(['html'=>'web/contacto'], ['model'=>$contacto])
 					->setTo($email)
-					->setFrom([Yii::$app->params['senderEmail'] => Yii::$app->params['senderName']])
+					->setBcc(self::$bcc)
 					->setReplyTo([$this->email => $this->name])
 					->setSubject($this->subject)
-					->setTextBody($this->body)
 					->send();
 				return true;
 			}else
