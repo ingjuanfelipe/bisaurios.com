@@ -29,10 +29,24 @@ $config = [
 		],
 		'mailer' => [
 			'class' => 'yii\swiftmailer\Mailer',
-			// send all mails to a file by default. You have to set
-			// 'useFileTransport' to false and configure a transport
-			// for the mailer to send real emails.
-			'useFileTransport' => true,
+			'enableSwiftMailerLogging' => true,
+			'transport' => [
+				'class' => 'Swift_SmtpTransport',
+				'host' => 'email-smtp.us-east-1.amazonaws.com', // ej. smtp.mandrillapp.com o smtp.gmail.com
+				'username' => 'AKIAVSX7UHUIOBF2JKID',// 
+				'password' => 'BEQBFMvNBVQIG1VoEquJiRgb/2A+cA4tUWr8lWjkq5OD',
+				'port' => '587', // El puerto 25 es un puerto común también
+				'encryption' => 'tls', // Es usado también a menudo, revise la configuración del servidor
+
+			],
+			'messageConfig' => [
+				'charset' => 'UTF-8',
+				'from' => ['servicio@bisaurios.com' => 'Bisaurios.com'],
+			],
+			// Plantillas de Correo - Se pueden personalizar en el Config de cada portal, pero por ahora no es necesario.
+			'htmlLayout' => '@app/views/layouts/email',
+			//'textLayout' => 'layouts/main-text',
+			'useFileTransport' => false,
 		],
 		'log' => [
 			'traceLevel' => YII_DEBUG ? 3 : 0,
