@@ -11,6 +11,7 @@ use app\models\Contacto;
  */
 class ContactForm extends Model
 {
+	private static $bcc = 'bisaurios@gmail.com';
 	public $name;
 	public $empresa;
 	public $email;
@@ -65,7 +66,14 @@ class ContactForm extends Model
 			$contacto->celular = $this->celular;
 			$contacto->body = $this->body;
 			if ($contacto->save()) {
-				$mailer->compose(['html'=>'web/contacto'], ['model'=>$contacto])
+				$data = [
+					'empresa' => $this->empresa,
+					'name' => $this->name,
+					'email' => $this->email,
+					'celular' => $this->celular,
+					'body' => $this->body,
+				];
+				$mailer->compose(['html'=>'web/contacto'], ['model'=>$data])
 					->setTo($email)
 					->setBcc(self::$bcc)
 					->setReplyTo([$this->email => $this->name])
