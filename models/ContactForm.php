@@ -11,7 +11,7 @@ use app\models\Contacto;
  */
 class ContactForm extends Model
 {
-	private static $bcc = 'bisaurios@gmail.com';
+	private $bcc = 'bisaurios@gmail.com';
 	public $name;
 	public $empresa;
 	public $email;
@@ -73,9 +73,10 @@ class ContactForm extends Model
 					'celular' => $this->celular,
 					'body' => $this->body,
 				];
+				$mailer = Yii::$app->mailer;
 				$mailer->compose(['html'=>'web/contacto'], ['model'=>$data])
 					->setTo($email)
-					->setBcc(self::$bcc)
+					->setBcc($this->bcc)
 					->setReplyTo([$this->email => $this->name])
 					->setSubject($this->subject)
 					->send();
