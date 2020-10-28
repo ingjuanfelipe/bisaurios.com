@@ -33,8 +33,8 @@ $config = [
 			'transport' => [
 				'class' => 'Swift_SmtpTransport',
 				'host' => 'email-smtp.us-east-1.amazonaws.com', // ej. smtp.mandrillapp.com o smtp.gmail.com
-				'username' => 'AKIAVSX7UHUIOBF2JKID',// 
-				'password' => 'BEQBFMvNBVQIG1VoEquJiRgb/2A+cA4tUWr8lWjkq5OD',
+				'username' => 'AKIAXZXZXCQO2DOW7P6Q',// AKIAVSX7UHUIOBF2JKID
+				'password' => 'BJElMp1+j+JmquAZ8JUYiLE5i69d4xmUR0ft9Rus2yoY', // BEQBFMvNBVQIG1VoEquJiRgb/2A+cA4tUWr8lWjkq5OD
 				'port' => '587', // El puerto 25 es un puerto común también
 				'encryption' => 'tls', // Es usado también a menudo, revise la configuración del servidor
 
