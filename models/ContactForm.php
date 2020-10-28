@@ -73,14 +73,15 @@ class ContactForm extends Model
 					'celular' => $this->celular,
 					'body' => $this->body,
 				];
-				$mailer = Yii::$app->mailer;
-				$enviado = @$mailer->compose(['html'=>'web/contacto'], ['model'=>$data])
-					->setTo($email)
-					->setBcc($this->bcc)
-					->setReplyTo([$this->email => $this->name])
-					->setSubject($this->subject)
-					->send();
-				if (!$enviado) {
+				try {
+					$mailer = Yii::$app->mailer;
+					$enviado = @$mailer->compose(['html'=>'web/contacto'], ['model'=>$data])
+						->setTo($email)
+						->setBcc($this->bcc)
+						->setReplyTo([$this->email => $this->name])
+						->setSubject($this->subject)
+						->send();
+				} catch (Exception $e) {
 					mail($email, $this->subject, $this->body);
 				}
 				return true;
