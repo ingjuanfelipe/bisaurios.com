@@ -41,7 +41,7 @@ $config = [
 			],
 			'messageConfig' => [
 				'charset' => 'UTF-8',
-				'from' => ['servicio@bisaurios.com' => 'Bisaurios.com'],
+				'from' => ['web@bisaurios.com' => 'Bisaurios.com'],
 			],
 			// Plantillas de Correo - Se pueden personalizar en el Config de cada portal, pero por ahora no es necesario.
 			'htmlLayout' => '@app/views/layouts/email',
