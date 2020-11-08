@@ -26,6 +26,7 @@ $this->title = 'Bisaurios.com';
                     <p>Envíenos sus datos para contactarlo, conocer su proyecto y ponerlo en marcha.</p>
                 </div>
                 <div class="contact_form">
+                    <?php /*
                     <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
                         <?= $form->errorSummary($model); ?>
                         <div class="row">
@@ -61,6 +62,7 @@ $this->title = 'Bisaurios.com';
                             </div>
                         </div>
                     <?php ActiveForm::end(); ?>
+                    */ ?>
                 </div>
             </div>
         </div>
