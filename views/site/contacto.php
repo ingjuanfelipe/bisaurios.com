@@ -26,6 +26,7 @@ $this->title = 'Bisaurios.com';
                     <p>Envíenos sus datos para contactarlo, conocer su proyecto y ponerlo en marcha.</p>
                 </div>
                 <div class="contact_form">
+                    Escribenos a <a href="mailto:gerente.comercial@bisaurios.com"><b>gerente.comercial@bisaurios.com</b></a>
                     <?php /*
                     <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
                         <?= $form->errorSummary($model); ?>
