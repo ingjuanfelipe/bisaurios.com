@@ -27,7 +27,7 @@ $config = [
 		'errorHandler' => [
 			'errorAction' => 'site/error',
 		],
-		'mailer' => [
+		/*'mailer' => [
 			'class' => 'yii\swiftmailer\Mailer',
 			'enableSwiftMailerLogging' => true,
 			'transport' => [
@@ -47,7 +47,7 @@ $config = [
 			'htmlLayout' => '@app/views/layouts/email',
 			//'textLayout' => 'layouts/main-text',
 			'useFileTransport' => false,
-		],
+		],*/
 		'log' => [
 			'traceLevel' => YII_DEBUG ? 3 : 0,
 			'targets' => [
