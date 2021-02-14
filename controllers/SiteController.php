@@ -72,11 +72,11 @@ class SiteController extends Controller
 	public function actionContacto()
 	{
 		$model = new ContactForm();
-		if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+		/*if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
 			Yii::$app->session->setFlash('success','La información ha sido enviada a nuestro departamento Comercial. Pronto nos comunicaremos con usted.');
 
 			return $this->refresh();
-		}
+		}*/
 		return $this->render('contacto', [
 			'model' => $model,
 		]);
