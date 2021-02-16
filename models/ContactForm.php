@@ -74,12 +74,12 @@ class ContactForm extends Model
 					'body' => $this->body,
 				];
 				$mailer = Yii::$app->mailer;
-				@$mailer->compose(['html'=>'web/contacto'], ['model'=>$data])
+				/*@$mailer->compose(['html'=>'web/contacto'], ['model'=>$data])
 					->setTo($email)
 					->setBcc($this->bcc)
 					->setReplyTo([$this->email => $this->name])
 					->setSubject($this->subject)
-					->send();
+					->send();*/
 				return true;
 			}else
 				Yii::$app->session->setFlash('error', 'No se pudo enviar su mensaje');
